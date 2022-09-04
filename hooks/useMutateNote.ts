@@ -14,7 +14,8 @@ export const useMutateNote = () => {
     },
     {
       onSuccess: () => {
-        revalidateList()
+        // NOTE: supabaseのfunction hookを使ってOn-Demand ISRを実現する
+        // revalidateList()
         reset()
         alert('Successfully completed!!')
       },
@@ -36,7 +37,7 @@ export const useMutateNote = () => {
     },
     {
       onSuccess: (res) => {
-        revalidateList()
+        // revalidateList()
         revalidateSingle(res[0].id)
         reset()
         alert('Successfully completed !!')
@@ -56,7 +57,7 @@ export const useMutateNote = () => {
     },
     {
       onSuccess: () => {
-        revalidateList()
+        // revalidateList()
         reset()
         alert('Successfully completed !!')
       },
